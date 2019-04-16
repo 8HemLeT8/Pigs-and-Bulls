@@ -1,6 +1,6 @@
 #pragma once
 #include "Guesser.hpp"
-using std::string;
+using namespace std;
 
 
 /**
