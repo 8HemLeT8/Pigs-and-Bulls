@@ -6,6 +6,8 @@ using namespace bullpgia;
 
 class SmartGuesser : public Guesser{
     public:
-    unsigned int play();
     string guess() override;
+    void learn(string) override;
+    void startNewGame(uint) override;
+
 };
