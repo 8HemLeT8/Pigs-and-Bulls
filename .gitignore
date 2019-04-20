@@ -11,6 +11,8 @@
 *.lo
 *.o
 *.obj
+demo
+test
 
 # Precompiled Headers
 *.gch
