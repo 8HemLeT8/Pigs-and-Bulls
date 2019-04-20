@@ -2,8 +2,8 @@
 #include "Guesser.hpp"
 
 using namespace std;
-using namespace bullpgia;
-
+using bullpgia::Guesser;
+namespace bullpgia{
 class SmartGuesser : public Guesser{
     public:
     string guess() override;
@@ -12,3 +12,4 @@ class SmartGuesser : public Guesser{
 
 };
 
+}
