@@ -4,13 +4,14 @@ using namespace std;
 
 namespace bullpgia
 {
-
 class Guesser
 {
-public:
-    virtual void startNewGame(uint);
-    virtual string guess() = 0;
-    virtual void learn(string);
+protected:
     unsigned int length;
+public:
+    virtual string guess() = 0;
+    virtual void startNewGame(uint a){}
+    virtual void learn(string){}
 };
 } // namespace bullpgia
+
