@@ -4,7 +4,7 @@ using namespace std;
 
 
 string SmartGuesser::guess() {
-    	string r="";
+	string r="";
 	for (uint i=0; i<this->length; ++i) {
 		char c = '0' + (rand()%10);
 		r += c;
