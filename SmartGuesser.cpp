@@ -14,7 +14,7 @@ string SmartGuesser::guess() {
 void SmartGuesser::learn(string s){
 
 }
-void SmartGuesser::startNewGame(uint a) {
+void SmartGuesser::startNewGame(uint len) {
 
 }
 
