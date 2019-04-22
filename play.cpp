@@ -33,6 +33,4 @@ namespace bullpgia {
 		}
 		return TECHNICAL_VICTORY_TO_CHOOSER;  // Guesser could not guess in time
 	}
-	
-    
 }
