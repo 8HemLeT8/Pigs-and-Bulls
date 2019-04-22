@@ -14,11 +14,7 @@ string SmartGuesser::guess() {
 void SmartGuesser::learn(string s){
 
 }
-<<<<<<< HEAD
-void SmartGuesser::startNewGame(uint len) {
-=======
 void SmartGuesser::startNewGame(uint ut) {
->>>>>>> 068127d13b94e1a8421b1c3851d9aea871cd7e6e
 
 }
 
