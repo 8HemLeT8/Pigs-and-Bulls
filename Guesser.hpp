@@ -6,9 +6,10 @@ namespace bullpgia
 {
 class Guesser
 {
-public:
+protected:
     unsigned int length;
 
+public:
     virtual string guess() = 0;
     virtual void startNewGame(uint len){}
     virtual void learn(string){}

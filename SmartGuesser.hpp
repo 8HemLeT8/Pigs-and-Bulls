@@ -4,6 +4,7 @@
 using namespace std;
 using namespace bullpgia;
 class SmartGuesser : public Guesser{
+    
     public:
     string guess() override;
     void learn(string) override;
