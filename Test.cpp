@@ -31,23 +31,25 @@ int main()
 		ConstantGuesser g1234{"1234"}, g12345{"12345"}, g9999{"9999"};
 
 		testcase.setname("Calculate bull and pgia")
-				.CHECK_OUTPUT(calculateBullAndPgia("1234", "1234"), "4,0") // 4 bull, 0 pgia
-				.CHECK_OUTPUT(calculateBullAndPgia("1234", "4321"), "0,4") // 0 bull, 4 pgia
-				// TESTING BULL AND PGIA
-				.CHECK_OUTPUT(calculateBullAndPgia("5555", "5555"), "4,0") // 4 bull, 0 pgia
-				.CHECK_OUTPUT(calculateBullAndPgia("0000", "5555"), "0,0") // 0 bull, 0 pgia
-				.CHECK_OUTPUT(calculateBullAndPgia("8526", "8521"), "3,1") // 3 bull, 1 pgia
-				.CHECK_OUTPUT(calculateBullAndPgia("8526", "8511"), "2,2") // 2 bull, 2 pgia
-				.CHECK_OUTPUT(calculateBullAndPgia("8526", "8411"), "3,1") // 1 bull, 3 pgia
-				.CHECK_OUTPUT(calculateBullAndPgia("8526", "6218"), "0,3") // 0 bull, 3 pgia
-				;
+			.CHECK_OUTPUT(calculateBullAndPgia("1234", "1234"), "4,0") // 4 bull, 0 pgia
+			.CHECK_OUTPUT(calculateBullAndPgia("1234", "4321"), "0,4") // 0 bull, 4 pgia
+			// TESTING BULL AND PGIA
+			.CHECK_OUTPUT(calculateBullAndPgia("5555", "5555"), "4,0") // 4 bull, 0 pgia
+			.CHECK_OUTPUT(calculateBullAndPgia("0000", "5555"), "0,0") // 0 bull, 0 pgia
+			.CHECK_OUTPUT(calculateBullAndPgia("8526", "8521"), "3,0") // 3 bull, 0 pgia
+			.CHECK_OUTPUT(calculateBullAndPgia("8526", "8511"), "2,0") // 2 bull, 0 pgia
+			.CHECK_OUTPUT(calculateBullAndPgia("8526", "8411"), "1,0") // 1 bull, 0 pgia
+			.CHECK_OUTPUT(calculateBullAndPgia("8526", "6218"), "0,3") // 0 bull, 3 pgia
+			.CHECK_OUTPUT(calculateBullAndPgia("2626", "2662"), "2,2") // 0 bull, 3 pgia
+
+			;
 
 		testcase.setname("Play with dummy choosers and guessers")
-				.CHECK_EQUAL(play(c1234, g1234, 4, 100), 1)		 // guesser wins in one turn.
-				.CHECK_EQUAL(play(c1234, g9999, 4, 100), 101)	// guesser loses by running out of turns
-				.CHECK_EQUAL(play(c1234, g12345, 4, 100), 101) // guesser loses technically by making an illegal guess (too long).
-				.CHECK_EQUAL(play(c12345, g1234, 4, 100), 0)	 // chooser loses technically by choosing an illegal number (too long).
-				;
+			.CHECK_EQUAL(play(c1234, g1234, 4, 100), 1)	// guesser wins in one turn.
+			.CHECK_EQUAL(play(c1234, g9999, 4, 100), 101)  // guesser loses by running out of turns
+			.CHECK_EQUAL(play(c1234, g12345, 4, 100), 101) // guesser loses technically by making an illegal guess (too long).
+			.CHECK_EQUAL(play(c12345, g1234, 4, 100), 0)   // chooser loses technically by choosing an illegal number (too long).
+			;
 
 		testcase.setname("Play with smart guesser");
 		RandomChooser randy;
@@ -59,27 +61,26 @@ int main()
 		}
 
 		testcase.setname("Dummy choosers with smart guesser (easy pattern)")
-				.CHECK_EQUAL(play(c1234, smarty, 4, 100), 10) // guesser wins in less than 10 rounds.
-				.CHECK_EQUAL(play(c9999, smarty, 4, 100), 10) // guesser wins in less than 10 rounds.
-				.CHECK_EQUAL(play(c12345, smarty, 4, 100), 0) // chooser loses technically by choosing an illegal number (too long).
-				;
+			.CHECK_EQUAL(play(c1234, smarty, 4, 100), 10) // guesser wins in less than 10 rounds.
+			.CHECK_EQUAL(play(c9999, smarty, 4, 100), 10) // guesser wins in less than 10 rounds.
+			.CHECK_EQUAL(play(c12345, smarty, 4, 100), 0) // chooser loses technically by choosing an illegal number (too long).
+			;
 
 		testcase.setname("Random chooser with smart guesser")
-				.CHECK_EQUAL(play(randy, smarty, 4, 100), 100)
-				.CHECK_EQUAL(play(randy, smarty, 4, 100), 100)
-				.CHECK_EQUAL(play(randy, smarty, 4, 100), 100)
-				.CHECK_EQUAL(play(randy, smarty, 4, 100), 100)
-				.CHECK_EQUAL(play(randy, smarty, 4, 100), 100)
-				.CHECK_EQUAL(play(randy, smarty, 4, 100), 100);
+			.CHECK_EQUAL(play(randy, smarty, 4, 100), 100)
+			.CHECK_EQUAL(play(randy, smarty, 4, 100), 100)
+			.CHECK_EQUAL(play(randy, smarty, 4, 100), 100)
+			.CHECK_EQUAL(play(randy, smarty, 4, 100), 100)
+			.CHECK_EQUAL(play(randy, smarty, 4, 100), 100)
+			.CHECK_EQUAL(play(randy, smarty, 4, 100), 100);
 
 		testcase.setname("Random chooser with random guesser")
-				.CHECK_EQUAL(play(randy, randy_g, 4, 100), 100)
-				.CHECK_EQUAL(play(randy, randy_g, 4, 100), 100)
-				.CHECK_EQUAL(play(randy, randy_g, 4, 100), 100)
-				.CHECK_EQUAL(play(randy, randy_g, 4, 100), 100)
-				.CHECK_EQUAL(play(randy, randy_g, 4, 100), 100)
-				.CHECK_EQUAL(play(randy, randy_g, 4, 100), 100)
-		;
+			.CHECK_EQUAL(play(randy, randy_g, 4, 100), 100)
+			.CHECK_EQUAL(play(randy, randy_g, 4, 100), 100)
+			.CHECK_EQUAL(play(randy, randy_g, 4, 100), 100)
+			.CHECK_EQUAL(play(randy, randy_g, 4, 100), 100)
+			.CHECK_EQUAL(play(randy, randy_g, 4, 100), 100)
+			.CHECK_EQUAL(play(randy, randy_g, 4, 100), 100);
 		grade = testcase.grade();
 	}
 	else
