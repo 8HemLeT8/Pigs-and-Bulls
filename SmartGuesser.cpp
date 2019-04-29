@@ -4,15 +4,14 @@ using namespace std;
 
 string lastGuess = "";
 string nextGuess = "";
-int amnt;
 vector<string> vec;
 string SmartGuesser::guess()
 {
 
 	if (nextGuess.compare("") == 0)
 	{
-		lastGuess = "1234";
-		return "1234";
+		lastGuess = "1122";
+		return "1122";
 	}
 	else
 	{
@@ -22,6 +21,9 @@ string SmartGuesser::guess()
 }
 void SmartGuesser::learn(string s)
 {
+	int bul = s[0]-'0';
+	int pgia = s[2]-'0';
+
 }
 
 void optionArr(string curr,int size)
@@ -29,7 +31,6 @@ void optionArr(string curr,int size)
 	if(size==1){
 		for(int i=0;i<10;i++){
 			vec.push_back(curr+to_string(i));
-			cout << curr << to_string(i)+" ";
 		}
 		return;
 	}
@@ -43,8 +44,8 @@ void optionArr(string curr,int size)
 }
 void SmartGuesser::startNewGame(uint ut)
 {
-	cout << "NEW GAME";
 	length = ut;
-	amnt = pow(9, length);
+	if(length<7){
 	optionArr("",length);
+	}
 }
