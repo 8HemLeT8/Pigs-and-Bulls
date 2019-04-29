@@ -29,7 +29,7 @@ void optionArr(string curr,int size)
 	if(size==1){
 		for(int i=0;i<10;i++){
 			vec.push_back(curr+to_string(i));
-			cout << "Added: " << curr << to_string(i)+" ";
+			cout << curr << to_string(i)+" ";
 		}
 		return;
 	}
