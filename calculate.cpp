@@ -10,7 +10,7 @@ string calculateBullAndPgia(string choice, string guess)
     string nGuess = "";
     if (choice.length() != guess.length())
     {
-        return "0,1";
+        return "0";
     }
     for (int i = 0; i < choice.length(); i++)
     {
