@@ -10,8 +10,11 @@ string SmartGuesser::guess()
 
 	if (nextGuess.compare("") == 0)
 	{
-		lastGuess = "1122";
-		return "1122";
+		for (int i = 0; i < length; i++)
+		{
+			lastGuess += "1";
+		}
+		return lastGuess;
 	}
 	else
 	{
@@ -21,8 +24,6 @@ string SmartGuesser::guess()
 }
 void SmartGuesser::learn(string s)
 {
-	int bul = s[0] - '0';
-	int pgia = s[2] - '0';
 	vector<string> newVec;
 
 	for (int i = 0; i < vec.size(); i++)
@@ -57,8 +58,11 @@ void optionArr(string curr, int size)
 }
 void SmartGuesser::startNewGame(uint ut)
 {
+	lastGuess = "";
+	nextGuess = "";
+	vec.clear();
 	length = ut;
-	if (length < 7)
+	if (length < 6)
 	{
 		optionArr("", length);
 	}
