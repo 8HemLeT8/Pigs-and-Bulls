@@ -58,8 +58,8 @@ void optionArr(string curr, int size)
 void SmartGuesser::startNewGame(uint ut)
 {
 	length = ut;
-	if (length < 7)
-	{
+	//if (length < 7)
+	//{
 		optionArr("", length);
-	}
+//	}
 }

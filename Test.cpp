@@ -41,7 +41,6 @@ int main()
 			.CHECK_OUTPUT(calculateBullAndPgia("8526", "8411"), "1,0") // 1 bull, 0 pgia
 			.CHECK_OUTPUT(calculateBullAndPgia("8526", "6218"), "0,3") // 0 bull, 3 pgia
 			.CHECK_OUTPUT(calculateBullAndPgia("2626", "2662"), "2,2") // 0 bull, 3 pgia
-
 			;
 
 		testcase.setname("Play with dummy choosers and guessers")
