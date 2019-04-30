@@ -21,31 +21,45 @@ string SmartGuesser::guess()
 }
 void SmartGuesser::learn(string s)
 {
-	int bul = s[0]-'0';
-	int pgia = s[2]-'0';
+	int bul = s[0] - '0';
+	int pgia = s[2] - '0';
+	vector<string> newVec;
 
+	for (int i = 0; i < vec.size(); i++)
+	{
+		string res = calculateBullAndPgia(lastGuess, vec.at(i));
+		if (res.compare(s) == 0)
+		{
+			newVec.push_back(vec.at(i));
+		}
+	}
+	vec = newVec;
+	nextGuess = newVec.at(0);
 }
 
-void optionArr(string curr,int size)
+void optionArr(string curr, int size)
 {
-	if(size==1){
-		for(int i=0;i<10;i++){
-			vec.push_back(curr+to_string(i));
+	if (size == 1)
+	{
+		for (int i = 0; i < 10; i++)
+		{
+			vec.push_back(curr + to_string(i));
 		}
 		return;
 	}
-	else{
-		for(int i=0;i<10;i++){
-			optionArr(curr+to_string(i),size-1);
+	else
+	{
+		for (int i = 0; i < 10; i++)
+		{
+			optionArr(curr + to_string(i), size - 1);
 		}
 	}
-
-
 }
 void SmartGuesser::startNewGame(uint ut)
 {
 	length = ut;
-	if(length<7){
-	optionArr("",length);
+	if (length < 7)
+	{
+		optionArr("", length);
 	}
 }
