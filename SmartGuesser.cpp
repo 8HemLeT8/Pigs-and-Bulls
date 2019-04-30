@@ -7,7 +7,6 @@ string nextGuess = "";
 vector<string> vec;
 string SmartGuesser::guess()
 {
-
 	if (nextGuess.compare("") == 0)
 	{
 		for (int i = 0; i < length; i++)
@@ -62,8 +61,8 @@ void SmartGuesser::startNewGame(uint ut)
 	nextGuess = "";
 	vec.clear();
 	length = ut;
-	if (length < 6)
-	{
+	// if (length < 6)
+	// {
 		optionArr("", length);
-	}
+//	}
 }
