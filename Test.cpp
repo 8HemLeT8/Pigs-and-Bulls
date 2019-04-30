@@ -60,27 +60,36 @@ int main()
 			testcase.CHECK_EQUAL(play(randy, smarty, 4, 100) <= 10, true); // smarty should always win in at most 10 turns!
 		}
 
-		testcase.setname("Dummy choosers with smart guesser (easy pattern)")
-			.CHECK_EQUAL(play(c1234, smarty, 4, 100), 10) // guesser wins in less than 10 rounds.
-			.CHECK_EQUAL(play(c9999, smarty, 4, 100), 10) // guesser wins in less than 10 rounds.
-			.CHECK_EQUAL(play(c12345, smarty, 4, 100), 0) // chooser loses technically by choosing an illegal number (too long).
-			;
-
 		testcase.setname("Random chooser with smart guesser")
-			.CHECK_EQUAL(play(randy, smarty, 4, 100), 100)
-			.CHECK_EQUAL(play(randy, smarty, 4, 100), 100)
-			.CHECK_EQUAL(play(randy, smarty, 4, 100), 100)
-			.CHECK_EQUAL(play(randy, smarty, 4, 100), 100)
-			.CHECK_EQUAL(play(randy, smarty, 4, 100), 100)
-			.CHECK_EQUAL(play(randy, smarty, 4, 100), 100);
+			.CHECK_EQUAL(play(randy, smarty, 4, 100) <= 10, true)
+			.CHECK_EQUAL(play(randy, smarty, 4, 100) <= 10, true)
+			.CHECK_EQUAL(play(randy, smarty, 4, 100) <= 10, true)
+			.CHECK_EQUAL(play(randy, smarty, 4, 100) <= 10, true)
+			.CHECK_EQUAL(play(randy, smarty, 4, 100) <= 10, true)
+			.CHECK_EQUAL(play(randy, smarty, 4, 100) <= 10, true)
+			.CHECK_EQUAL(play(randy, smarty, 4, 100) <= 10, true)
+			.CHECK_EQUAL(play(randy, smarty, 4, 100) <= 10, true)
+			.CHECK_EQUAL(play(randy, smarty, 4, 100) <= 10, true)
+			.CHECK_EQUAL(play(randy, smarty, 4, 100) <= 10, true)
+			.CHECK_EQUAL(play(randy, smarty, 4, 100) <= 10, true)
+			.CHECK_EQUAL(play(randy, smarty, 4, 100) <= 10, true)
+			.CHECK_EQUAL(play(randy, smarty, 4, 100) <= 10, true)
+			.CHECK_EQUAL(play(randy, smarty, 4, 100) <= 10, true)
+			.CHECK_EQUAL(play(randy, smarty, 4, 100) <= 10, true)
+			.CHECK_EQUAL(play(randy, smarty, 4, 100) <= 10, true)
+			.CHECK_EQUAL(play(randy, smarty, 4, 100) <= 10, true)
+			.CHECK_EQUAL(play(randy, smarty, 4, 100) <= 10, true)
+			.CHECK_EQUAL(play(randy, smarty, 4, 100) <= 10, true)
+			.CHECK_EQUAL(play(randy, smarty, 4, 100) <= 10, true)
+			.CHECK_EQUAL(play(randy, smarty, 4, 100) <= 10, true)
+			.CHECK_EQUAL(play(randy, smarty, 4, 100) <= 10, true)
+			.CHECK_EQUAL(play(randy, smarty, 4, 100) <= 10, true)
+			.CHECK_EQUAL(play(randy, smarty, 4, 100) <= 10, true)
+			.CHECK_EQUAL(play(randy, smarty, 4, 100) <= 10, true)
+			.CHECK_EQUAL(play(randy, smarty, 4, 100) <= 10, true)
+			.CHECK_EQUAL(play(randy, smarty, 4, 100) <= 10, true)
+			.CHECK_EQUAL(play(randy, smarty, 4, 100) <= 10, true);
 
-		testcase.setname("Random chooser with random guesser")
-			.CHECK_EQUAL(play(randy, randy_g, 4, 100), 100)
-			.CHECK_EQUAL(play(randy, randy_g, 4, 100), 100)
-			.CHECK_EQUAL(play(randy, randy_g, 4, 100), 100)
-			.CHECK_EQUAL(play(randy, randy_g, 4, 100), 100)
-			.CHECK_EQUAL(play(randy, randy_g, 4, 100), 100)
-			.CHECK_EQUAL(play(randy, randy_g, 4, 100), 100);
 		grade = testcase.grade();
 	}
 	else
